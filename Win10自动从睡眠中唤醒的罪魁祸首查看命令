@@ -1,0 +1,24 @@
+powercfg /lastwake
+
+
+在这个页面中 Fancy Hu          https://answers.microsoft.com/zh-hans/windows/forum/all/windows-10/3b711a05-58b7-448b-9753-5649ac88d1b8
+看到 Fancy Hu 的回答           https://answers.microsoft.com/zh-hans/profile/5b71e46b-267d-49a0-b698-792074426057?sort=LastReplyDate&dir=Desc&tab=Threads&forum=allcategories&meta=&status=&mod=&advFil=&postedAfter=undefined&postedBefore=undefined&threadType=All&page=1
+
+我也遇到了这个问题，睡眠后很快电脑就唤醒了。
+
+禁用了鼠标、键盘、网卡的唤醒功能后发现自动唤醒的情况依然存在。
+
+用管理员模式启动命令提示符（CMD），输入powercfg /lastwake发现电脑是被GDCASvrFramework服务唤醒的。在任务管理器结束该进程后不再自动唤醒了。
+
+希望能够帮到仍然被这个问题困扰的朋友。
+
+C:\WINDOWS\system32>powercfg /lastwake
+唤醒历史记录计数 - 1
+唤醒历史记录 [0]
+  唤醒源计数 - 1
+  唤醒源 [0]
+    类型: 唤醒计时器
+    所有者: [SERVICE] \Device\HarddiskVolume7\Program Files (x86)\GDCA\GDCACLIENT\gdca_svr_framework.exe (GDCASvrFramework)
+    所有者提供的原因: generic
+
+感谢 Fancy Hu 的热心帮助。
