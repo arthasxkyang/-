@@ -1,0 +1,9 @@
+adb install DanceCentral.apk
+adb push com.HarmonixMusic.DCVRQuest /sdcard/Android/obb/
+
+REM 目录格式
+REM [上级目录]
+REM 名称	大小	修改日期
+REM com.HarmonixMusic.DCVRQuest/		2019/11/17 上午5:51:26
+REM DanceCentral.apk	50.6 MB	2019/12/17 上午12:28:10
+REM install.bat	104 B	2021/1/11 下午10:46:03
